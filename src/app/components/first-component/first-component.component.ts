@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './first-component.component.css'
 })
 export class FirstComponentComponent implements OnInit{
-  Name = 'Rogério';
+  Name = 'Rogério Camarano';
   Age = 47;
   Job = 'Developer';
   Hobbies = ['Music', 'Movies', 'Sports'];
