@@ -1,0 +1,11 @@
+<div class="section">
+  <div class="text" *ngIf="canShow">This is the if-render component</div>
+  <h4 class="text" *ngIf="name === 'John Doe'; else nameNotFound">
+    Teh name is John Doe
+  </h4>
+  <ng-template #nameNotFound>
+    <div>
+      <h4 class="text">The name was not found</h4>
+    </div>
+  </ng-template>
+</div>

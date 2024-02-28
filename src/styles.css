@@ -3,3 +3,14 @@
     background-color: darkslategray;
     color: lightgray;
 }/* You can add global styles to this file, and also import other style files */
+
+
+body {
+    padding-bottom: 500px;
+}
+
+.section {
+    border-bottom: 1px solid lightgray;
+    padding: 2em;
+    margin-bottom: 1em;
+}

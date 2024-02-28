@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { FirstComponentComponent } from './components/first-component/first-component.component';
 import { ParentDataComponent } from './components/parent-data/parent-data.component';
 import { DeirectivesComponent } from './components/deirectives/deirectives.component';
+import { IfRenderComponent } from './components/if-render/if-render.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponentComponent,
     ParentDataComponent,
-    DeirectivesComponent
+    DeirectivesComponent,
+    IfRenderComponent
   ],
   imports: [
     BrowserModule,
