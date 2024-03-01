@@ -14,6 +14,7 @@ import { CounterComponent } from './components/counter/counter.component';
 import { NumberPlusComponent } from './components/number-plus/number-plus.component';
 import { NumberMinusComponent } from './components/number-minus/number-minus.component';
 import { ListRenderComponent } from './components/list-render/list-render.component';
+import { PipesComponent } from './components/pipes/pipes.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ListRenderComponent } from './components/list-render/list-render.compon
     CounterComponent,
     NumberPlusComponent,
     NumberMinusComponent,
-    ListRenderComponent
+    ListRenderComponent,
+    PipesComponent
   ],
   imports: [
     BrowserModule,
