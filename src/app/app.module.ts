@@ -13,6 +13,7 @@ import { ChangeNumberComponent } from './components/change-number/change-number.
 import { CounterComponent } from './components/counter/counter.component';
 import { NumberPlusComponent } from './components/number-plus/number-plus.component';
 import { NumberMinusComponent } from './components/number-minus/number-minus.component';
+import { ListRenderComponent } from './components/list-render/list-render.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NumberMinusComponent } from './components/number-minus/number-minus.com
     ChangeNumberComponent,
     CounterComponent,
     NumberPlusComponent,
-    NumberMinusComponent
+    NumberMinusComponent,
+    ListRenderComponent
   ],
   imports: [
     BrowserModule,

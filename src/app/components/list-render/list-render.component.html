@@ -1,0 +1,14 @@
+<div class="section">
+    <h4>Animals</h4>
+    <ul>
+        <li *ngFor="let animal of animals">
+            Name: {{animal.name}} | Type: {{animal.type}} | Age: {{animal.age}}
+        </li>
+    </ul>
+    <h4>Cars</h4>
+    <ul>
+        <li *ngFor="let car of cars">
+            Brand: {{car.brand}} | Model: {{car.model}} | Year: {{car.year}}
+        </li>
+    </ul>
+</div>
