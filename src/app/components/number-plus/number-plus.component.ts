@@ -6,19 +6,13 @@ import { Component, Output, OnInit, EventEmitter } from '@angular/core';
   styleUrl: './number-plus.component.css'
 })
 export class NumberPlusComponent implements OnInit{
-
-  @Output() changeNumber: EventEmitter<any> = new EventEmitter();
-
-  myNumber: number = 0;
+  @Output() numberPlus: EventEmitter<any> = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
 
   handleClick() {
-    this.changeNumber.emit();
+    this.numberPlus.emit();
   }
-
-  numberPlus() {
-    this.myNumber = Math.floor(this.myNumber + 1);}
 }

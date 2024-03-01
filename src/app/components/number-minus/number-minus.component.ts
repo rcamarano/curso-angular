@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-number-minus',
@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrl: './number-minus.component.css'
 })
 export class NumberMinusComponent {
+  @Output() numberMinus: EventEmitter<any> = new EventEmitter();
+
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  handleClick() {
+    this.numberMinus.emit();
+  }
 
 }

@@ -7,20 +7,20 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrl: './counter.component.css'
 })
 export class CounterComponent implements OnInit{
-  @Output() numberPlus: EventEmitter<any> = new EventEmitter();
-
-  constructor() {}
-
-  ngOnInit(): void {}
-
-  handleClick() {
-    this.numberPlus.emit();
-  }
-  myNumber: number = 0;
+  // @Output() numberPlus: EventEmitter<any> = new EventEmitter();
 
   // constructor() {}
 
   // ngOnInit(): void {}
+
+  // handleClick() {
+  //   this.numberPlus.emit();
+  // }
+  myNumber: number = 0;
+
+  constructor() {}
+
+  ngOnInit(): void {}
 
   NumberPlus() {
     this.myNumber = Math.floor(this.myNumber + 1);}
