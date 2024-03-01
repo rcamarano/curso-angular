@@ -31,6 +31,6 @@ export class ListRenderComponent implements OnInit{
     this.animalDetails = `The age of ${animal.name} is ${animal.age} years old`;
   }
   showYear(car: Cars) {
-    this.carDetails = `The year of ${car.year} is ${car.year}`;
+    this.carDetails = `The fabrication year of ${car.model} is ${car.year}`;
   }
 }
