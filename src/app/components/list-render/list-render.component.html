@@ -4,6 +4,8 @@
         <li *ngFor="let animal of animals">
             Name: {{animal.name}} | Type: {{animal.type}}
             <button (click)="showAge(animal)">Show age</button>
+            <button (click)="removeAnimal(animal)">Delete</button>
+
         </li>
     </ul>
     <p>{{ animalDetails }}</p>
@@ -12,6 +14,8 @@
         <li *ngFor="let car of cars">
             Brand: {{car.brand}} | Model: {{car.model}}
             <button (click)="showYear(car)">Show year</button>
+            <button (click)="removeCar(car)">Delete</button>
+
         </li>
     </ul>
     <p>{{ carDetails }}</p>

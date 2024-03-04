@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Animals } from '../../interfaces/Animals';
 import { Cars } from '../../interfaces/Cars';
+import { ListService } from '../../services/list.service';
 
 
 @Component({
@@ -23,7 +24,7 @@ export class ListRenderComponent implements OnInit{
   animalDetails = '';
   carDetails = '';
 
-  constructor() { }
+  constructor(private listService: ListService) { }
 
   ngOnInit(): void {}
 
@@ -33,4 +34,12 @@ export class ListRenderComponent implements OnInit{
   showYear(car: Cars) {
     this.carDetails = `The fabrication year of ${car.model} is ${car.year}`;
   }
+  removeAnimal(animal: Animals) {
+    // console.log('Removing animal', animal);
+    this.animals= this.listService.removeAnimal(this.animals, animal);
+}
+removeCar(car: Cars) {
+  // console.log('Removing animal', animal);
+  this.cars= this.listService.removeCar(this.cars, car);
+}
 }
