@@ -38,7 +38,8 @@ import { TwoWayBindComponent } from './components/two-way-bind/two-way-bind.comp
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [
     provideClientHydration()

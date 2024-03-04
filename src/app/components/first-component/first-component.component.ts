@@ -6,14 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './first-component.component.css'
 })
 export class FirstComponentComponent implements OnInit{
-  Name = 'Rogério Camarano';
-  Age = 47;
-  Job = 'Developer';
-  Hobbies = ['Music', 'Movies', 'Sports'];
-  Car = {
-    Brand: 'Misubishi',
-    Model: 'Outlander',
-    Year: 2010
+  Name = 'Pai Mei';
+  Age = 237;
+  Job = 'Kung Fu Master';
+  Hobbies = ['Kill', ' Fight', ' Fishing'];
+  Pet = {
+    Name: 'Fumanchu',
+    Species: 'Dragon',
+    Age: 218
   };
 
   constructor() { }
