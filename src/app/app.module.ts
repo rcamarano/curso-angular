@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { NumberPlusComponent } from './components/number-plus/number-plus.compon
 import { NumberMinusComponent } from './components/number-minus/number-minus.component';
 import { ListRenderComponent } from './components/list-render/list-render.component';
 import { PipesComponent } from './components/pipes/pipes.component';
+import { TwoWayBindComponent } from './components/two-way-bind/two-way-bind.component';
 
 @NgModule({
   declarations: [
@@ -30,11 +32,13 @@ import { PipesComponent } from './components/pipes/pipes.component';
     NumberPlusComponent,
     NumberMinusComponent,
     ListRenderComponent,
-    PipesComponent
+    PipesComponent,
+    TwoWayBindComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()

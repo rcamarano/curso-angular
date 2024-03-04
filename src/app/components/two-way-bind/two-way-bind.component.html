@@ -1,0 +1,24 @@
+<div class="section">
+<h4>Two way Data Bind!</h4>
+<form>
+    <input type="text" 
+    [(ngModel)]="name"
+    name="name"
+    placeholder="Enter your name"
+    />
+</form>
+<form>
+    <input type="text" 
+    [(ngModel)]="age"
+    name="age"
+    placeholder="Enter your age"
+    />
+</form>
+<input type="submit" value="send">
+<div *ngIf="name !== ''">
+    <p>The name is {{ name }}</p>
+</div>
+<div *ngIf="age !== 0">
+    <p>The age is {{ age }}</p>
+</div>
+</div>
