@@ -1,15 +1,20 @@
 <header>Header</header>
-<nav>
-    <a routerLink="/">Home</a> - 
-    <a routerLink="/magic">Magic</a> - 
-    <a routerLink="random/">Random</a> - 
-    <a routerLink="/counter">Counter</a> - 
-    <a routerLink="/list">List</a>
-</nav>
-<h1>Hello Angular World!</h1>
+<h3>Hello Angular World!</h3>
 <p>Tutorial Angular Course</p>
-
-<router-outlet></router-outlet>
+<div style="display: flex">
+    <div style="width: 200px;">
+    <ul>
+        <a class="menu" routerLink="/">Home</a> <br> 
+        <a class="menu" routerLink="/magic">Magic</a> <br> 
+        <a class="menu" routerLink="random/">Random</a> <br> 
+        <a class="menu" routerLink="/counter">Counter</a> <br> 
+        <a class="menu" routerLink="/list">List</a>
+    </ul>
+    </div>
+    <div style="flex: 1;">
+        <router-outlet></router-outlet>
+    </div>
+</div>
 <footer>Footer</footer>
 
 <!-- <app-first-component></app-first-component>
