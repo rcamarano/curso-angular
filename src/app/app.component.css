@@ -12,4 +12,5 @@
 .content {
     display: flex;
     justify-content: bottom;
+    align-items: center;
 }
