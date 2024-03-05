@@ -1,3 +1,4 @@
+import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FirstComponentComponent } from './components/first-component/first-component.component';
@@ -13,7 +14,10 @@ const routes: Routes = [
     { path: 'magic', component: EventsComponent },
     { path: 'random', component: EmiterComponent},
     { path: 'counter', component: CounterComponent },
-    { path: 'list', component: ListRenderComponent}];
+    { path: 'list', component: ListRenderComponent},
+    { path: 'list/:id', component: ItemDetailComponent},
+];
+
 
 @NgModule({
     declarations: [],
