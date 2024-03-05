@@ -1,0 +1,12 @@
+{
+  "animals": [
+    { "id": 1, "name": "Jade", "type": "Dog", "age": 3 },
+    { "id": 2, "name": "Mel", "type": "Cat", "age": 2 },
+    { "id": 3, "name": "Puggy", "type": "Pig", "age": 1 }
+  ],
+  "cars": [
+    { "id": 1, "brand": "Toyota", "model": "Corolla", "year": 2015 },
+    { "id": 2, "brand": "Honda", "model": "Civic", "year": 2016 },
+    { "id": 3, "brand": "Ford", "model": "Fusion", "year": 2017 }
+  ]
+}
