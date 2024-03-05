@@ -39,7 +39,8 @@ export class ListRenderComponent implements OnInit{
   }
   removeAnimal(animal: Animals) {
     // console.log('Removing animal', animal);
-    this.animals= this.listService.removeAnimal(this.animals, animal);
+    this.animals=  this.animals.filter((a) => animal.name !== a.name);
+    this.listService.removeAnimal(animal.id).subscribe();
 }
 removeCar(car: Cars) {
   // console.log('Removing animal', animal);

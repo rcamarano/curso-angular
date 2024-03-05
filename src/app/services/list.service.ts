@@ -14,8 +14,8 @@ export class ListService {
   private apiCarsUrl = 'http://localhost:3000/cars';
 
   constructor(private http: HttpClient) { }
-  removeAnimal(animals: Animals[], animal: Animals) {
-    return animals.filter((a) => animal.name !== a.name);
+  removeAnimal(id: number) {
+    return this.http.delete(`${this.apiAnimalsUrl}/${id}`);
   }
   removeCar(cars: Cars[], car: Cars) {
     return cars.filter((c) => car.brand !== c.brand);
@@ -28,5 +28,8 @@ export class ListService {
   }
   getItem(id: number): Observable<Animals> {
     return this.http.get<Animals>(`${this.apiAnimalsUrl}/${id}`);
+}
+getCarItem(id: number): Observable<Cars> {
+  return this.http.get<Cars>(`${this.apiCarsUrl}/${id}`);
 }
 }

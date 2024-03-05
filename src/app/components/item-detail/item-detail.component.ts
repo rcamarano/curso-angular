@@ -23,4 +23,8 @@ getAnimal(){
   const id = Number(this.route.snapshot.paramMap.get("id"));
   this.listService.getItem(id).subscribe((animal) => this.animal = animal);
 }
+getCar(){
+  const id = Number(this.route.snapshot.paramMap.get("id"));
+  this.listService.getCarItem(id).subscribe((car) => this.car = car);
+}
 }

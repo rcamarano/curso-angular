@@ -12,7 +12,7 @@
     <h4>Cars</h4>
     <ul>
         <li *ngFor="let car of cars">
-            Brand: {{car.brand}} | Model: {{car.model}}
+            Brand: <a routerLink="/list/{{ car.id }}">{{car.brand}}</a> | Type: {{car.model}}
             <button (click)="showYear(car)">Show year</button>
             <button (click)="removeCar(car)">Delete</button>
 
