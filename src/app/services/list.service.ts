@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Animals } from '../interfaces/Animals';
 import { Cars } from '../interfaces/Cars';
 
@@ -26,7 +26,7 @@ export class ListService {
   getCars(): Observable<Cars[]> {
     return this.http.get<Cars[]>(this.apiCarsUrl);
   }
-  getItam(id: number): Observable<Animals> {
+  getItem(id: number): Observable<Animals> {
     return this.http.get<Animals>(`${this.apiAnimalsUrl}/${id}`);
 }
 }

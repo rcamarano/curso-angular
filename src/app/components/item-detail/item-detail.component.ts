@@ -21,6 +21,6 @@ export class ItemDetailComponent implements OnInit {
 }
 getAnimal(){
   const id = Number(this.route.snapshot.paramMap.get("id"));
-  this.listService.getItam(id).subscribe((animal) => this.animal = animal);
+  this.listService.getItem(id).subscribe((animal) => this.animal = animal);
 }
 }
