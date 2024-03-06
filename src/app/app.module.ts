@@ -20,6 +20,7 @@ import { PipesComponent } from './components/pipes/pipes.component';
 import { TwoWayBindComponent } from './components/two-way-bind/two-way-bind.component';
 import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 import { ItemDetailCarComponent } from './components/item-detail-car/item-detail-car.component';
+import { AddAnimalComponent } from './components/add-animal/add-animal.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ItemDetailCarComponent } from './components/item-detail-car/item-detail
     PipesComponent,
     TwoWayBindComponent,
     ItemDetailComponent,
-    ItemDetailCarComponent
+    ItemDetailCarComponent,
+    AddAnimalComponent
   ],
   imports: [
     BrowserModule,

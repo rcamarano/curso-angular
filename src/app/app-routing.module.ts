@@ -8,6 +8,7 @@ import { IfRenderComponent } from './components/if-render/if-render.component';
 import { EmiterComponent } from './components/emiter/emiter.component';
 import { EventsComponent } from './components/events/events.component';
 import { ItemDetailCarComponent } from './components/item-detail-car/item-detail-car.component';
+import { AddAnimalComponent } from './components/add-animal/add-animal.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
     { path: 'list', component: ListRenderComponent},
     { path: 'list/:id', component: ItemDetailComponent},
     { path: 'listCar/:id', component: ItemDetailCarComponent},
+    { path: 'addAnimal', component: AddAnimalComponent},
 ];
 
 

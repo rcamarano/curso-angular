@@ -1,10 +1,12 @@
 <div class="section">
     <h4>Animals</h4>
+    <a class="menu" routerLink="/addAnimal">Add Animal</a> <br> 
     <ul>
         <li *ngFor="let animal of animals">
             Name: <a routerLink="/list/{{ animal.id }}">{{animal.name}}</a> | Type: {{animal.type}}
             <button (click)="showAge(animal)">Show age</button>
             <button (click)="removeAnimal(animal)">Delete</button>
+
 
         </li>
     </ul>

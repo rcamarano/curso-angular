@@ -30,4 +30,7 @@ export class ListService {
   getCarItem(id: number): Observable<Cars> {
     return this.http.get<Cars>(`${this.apiCarsUrl}/${id}`);
   }
+  addItem(item: Animals) {
+    return this.http.post(this.apiAnimalsUrl, item);
+  }
 }
