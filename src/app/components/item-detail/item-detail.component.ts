@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Animals } from '../../interfaces/Animals';
-import { Cars } from '../../interfaces/Cars';
 import { ListService } from '../../services/list.service';
 
 @Component({
@@ -11,7 +10,6 @@ import { ListService } from '../../services/list.service';
 })
 export class ItemDetailComponent implements OnInit {
   animal?: Animals;
-  car?: Cars;
 
   constructor(private listService: ListService, private route: ActivatedRoute) {
     this.getAnimal();
@@ -22,9 +20,5 @@ export class ItemDetailComponent implements OnInit {
 getAnimal(){
   const id = Number(this.route.snapshot.paramMap.get("id"));
   this.listService.getItem(id).subscribe((animal) => this.animal = animal);
-}
-getCar(){
-  const id = Number(this.route.snapshot.paramMap.get("id"));
-  this.listService.getCarItem(id).subscribe((car) => this.car = car);
 }
 }

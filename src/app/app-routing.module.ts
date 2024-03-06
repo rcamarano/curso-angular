@@ -7,6 +7,7 @@ import { CounterComponent } from './components/counter/counter.component';
 import { IfRenderComponent } from './components/if-render/if-render.component';
 import { EmiterComponent } from './components/emiter/emiter.component';
 import { EventsComponent } from './components/events/events.component';
+import { ItemDetailCarComponent } from './components/item-detail-car/item-detail-car.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
     { path: 'counter', component: CounterComponent },
     { path: 'list', component: ListRenderComponent},
     { path: 'list/:id', component: ItemDetailComponent},
+    { path: 'listCar/:id', component: ItemDetailCarComponent},
 ];
 
 

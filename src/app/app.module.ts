@@ -19,6 +19,7 @@ import { ListRenderComponent } from './components/list-render/list-render.compon
 import { PipesComponent } from './components/pipes/pipes.component';
 import { TwoWayBindComponent } from './components/two-way-bind/two-way-bind.component';
 import { ItemDetailComponent } from './components/item-detail/item-detail.component';
+import { ItemDetailCarComponent } from './components/item-detail-car/item-detail-car.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ItemDetailComponent } from './components/item-detail/item-detail.compon
     ListRenderComponent,
     PipesComponent,
     TwoWayBindComponent,
-    ItemDetailComponent
+    ItemDetailComponent,
+    ItemDetailCarComponent
   ],
   imports: [
     BrowserModule,

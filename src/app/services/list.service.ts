@@ -4,16 +4,14 @@ import { HttpClient } from '@angular/common/http';
 import { Animals } from '../interfaces/Animals';
 import { Cars } from '../interfaces/Cars';
 
-
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ListService {
   private apiAnimalsUrl = 'http://localhost:3000/animals';
   private apiCarsUrl = 'http://localhost:3000/cars';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
   removeAnimal(id: number) {
     return this.http.delete(`${this.apiAnimalsUrl}/${id}`);
   }
@@ -28,8 +26,8 @@ export class ListService {
   }
   getItem(id: number): Observable<Animals> {
     return this.http.get<Animals>(`${this.apiAnimalsUrl}/${id}`);
-}
-getCarItem(id: number): Observable<Cars> {
-  return this.http.get<Cars>(`${this.apiCarsUrl}/${id}`);
-}
+  }
+  getCarItem(id: number): Observable<Cars> {
+    return this.http.get<Cars>(`${this.apiCarsUrl}/${id}`);
+  }
 }

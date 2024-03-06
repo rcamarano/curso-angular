@@ -48,7 +48,7 @@ removeCar(car: Cars) {
 }
 getAnimals(): void {
   this.listService.getAnimals().subscribe((animals) => (this.animals = animals));
-}
+} 
 getCars(): void {
   this.listService.getCars().subscribe((cars) => (this.cars = cars));
 }
