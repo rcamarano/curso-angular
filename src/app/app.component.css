@@ -14,3 +14,14 @@
     justify-content: bottom;
     align-items: center;
 }
+
+.forms {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}

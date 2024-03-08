@@ -17,6 +17,30 @@
       "name": "Puggy",
       "type": "Pig",
       "age": 2
+    },
+    {
+      "id": "da66",
+      "name": "Animal",
+      "type": "",
+      "age": 0
+    },
+    {
+      "id": "aa41",
+      "name": "Animal",
+      "type": "",
+      "age": 0
+    },
+    {
+      "id": "9e9b",
+      "name": "Animal",
+      "type": "",
+      "age": 0
+    },
+    {
+      "id": "0645",
+      "name": "Animal",
+      "type": "",
+      "age": 0
     }
   ],
   "cars": [

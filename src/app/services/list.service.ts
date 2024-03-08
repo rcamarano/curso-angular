@@ -3,6 +3,11 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Animals } from '../interfaces/Animals';
 import { Cars } from '../interfaces/Cars';
+import { catchError } from 'rxjs/operators';
+// import { httpOptions } from './httpOptions';
+// import { HandleError, handleHttpError } from './handle-error';
+
+
 
 @Injectable({
   providedIn: 'root',
@@ -30,7 +35,17 @@ export class ListService {
   getCarItem(id: number): Observable<Cars> {
     return this.http.get<Cars>(`${this.apiCarsUrl}/${id}`);
   }
-  addItem(item: Animals) {
-    return this.http.post(this.apiAnimalsUrl, item);
+  saveAnimalData( data: any ){
+    // console.log(data);
+    return this.http.post(this.apiAnimalsUrl, data);
   }
+  // addItem(item: Animals) {
+  //   return this.http.post(this.apiAnimalsUrl, item);
+  // }
+//   addAnimal(animal: Animals): Observable<Animals> {
+//     return this.http.post<Animals>(this.apiAnimalsUrl, animal, httpOptions)
+//       .pipe(
+//         catchError(this.handleError('addAnimal', animal))
+//       );
+// }
 }

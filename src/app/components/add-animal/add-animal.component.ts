@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Animals } from '../../interfaces/Animals';
 import { ListService } from '../../services/list.service';
 import { Router } from '@angular/router';
+import { FormsModule, FormGroup, FormControl } from '@angular/forms';
 
 
 @Component({
@@ -18,14 +19,26 @@ export class AddAnimalComponent implements OnInit {
     age: 0,
   };
 
-  constructor(private listService: ListService, private router: Router) { }
+  constructor(private listService: ListService) { }
+  addAnimal=new FormGroup({
+    name: new FormControl(''),
+    type: new FormControl(''),
+    age: new FormControl(0),
+});
 
   ngOnInit() {
   }
 
-  addAnimal(animal: Animals) {
-    this.listService.addItem(animal);
-    this.router.navigate(['/addAnimal']);
+  SaveData() {
+    // console.log(this.addAnimal.value);
+    this.listService.saveAnimalData(this.addAnimal.value).subscribe((result) => {
+      console.log(result);
+    } );
   }
+
+  // addAnimal(animal: Animals) {
+  //   this.listService.addItem(animal);
+  //   this.router.navigate(['/addAnimal']);
+  // }
 
 }
