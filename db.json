@@ -61,6 +61,12 @@
       "brand": "Ford",
       "model": "Maverick",
       "year": 1976
+    },
+    {
+      "id": 5,
+      "brand": "Dodge",
+      "model": "Charger",
+      "year": 1977
     }
   ]
 }

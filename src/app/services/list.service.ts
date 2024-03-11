@@ -41,6 +41,10 @@ export class ListService {
   saveAnimalData( data: any ){
     return this.http.post(this.apiAnimalsUrl, data);
   }
+  getLastCar(): Observable<any[]> {
+    // Faz uma solicitação HTTP GET para obter todos os animais
+    return this.http.get<any[]>(this.apiCarsUrl, { observe: 'body' });
+  }
 saveCarData( data: any ){
   return this.http.post(this.apiCarsUrl, data);
 }
