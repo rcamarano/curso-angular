@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +21,7 @@ import { TwoWayBindComponent } from './components/two-way-bind/two-way-bind.comp
 import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 import { ItemDetailCarComponent } from './components/item-detail-car/item-detail-car.component';
 import { AddAnimalComponent } from './components/add-animal/add-animal.component';
+import { ListService } from './services/list.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { AddAnimalComponent } from './components/add-animal/add-animal.component
     ReactiveFormsModule,
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideHttpClient(withFetch()),
   ],
   bootstrap: [AppComponent]
 })

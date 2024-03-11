@@ -1,16 +1,16 @@
 <h3>Add a new animal to the list</h3>
-<form [formGroup]="addAnimal" class="forms" (ngSubmit)="SaveData">
+<form [formGroup]="addAnimal" class="forms" (ngSubmit)="SaveData()">
     <div class="form-group">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="Enter tha animal's name" formControlName="name" required>
     </div>
     <div class="form-group">
         <label for="type">Type:</label>
-        <input type="text" id="type" name="type" placeholder="Enter the animal's type" formControlType="type" required>
+        <input type="text" id="type" name="type" placeholder="Enter the animal's type" formControlName="type" required>
     </div>
     <div class="form-group">
         <label for="age">Age:</label>
-        <input type="number" id="age" name="age" formControlAge="age" required>
+        <input type="number" id="age" name="age" formControlName="age" required>
     </div>
     <button type="submit">Add Animal</button>
 </form>

@@ -36,6 +36,7 @@ export class ListService {
     return this.http.get<Cars>(`${this.apiCarsUrl}/${id}`);
   }
   saveAnimalData( data: any ){
+    
     // console.log(data);
     return this.http.post(this.apiAnimalsUrl, data);
   }
