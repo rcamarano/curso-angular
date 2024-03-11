@@ -22,6 +22,7 @@ import { ItemDetailComponent } from './components/item-detail/item-detail.compon
 import { ItemDetailCarComponent } from './components/item-detail-car/item-detail-car.component';
 import { AddAnimalComponent } from './components/add-animal/add-animal.component';
 import { ListService } from './services/list.service';
+import { AddCarComponent } from './components/add-car/add-car.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ListService } from './services/list.service';
     TwoWayBindComponent,
     ItemDetailComponent,
     ItemDetailCarComponent,
-    AddAnimalComponent
+    AddAnimalComponent,
+    AddCarComponent
   ],
   imports: [
     BrowserModule,

@@ -23,6 +23,12 @@
       "name": "Gismo",
       "type": "Moguai",
       "age": 647
+    },
+    {
+      "id": "ccb1",
+      "name": "Caco",
+      "type": "Frog",
+      "age": 68
     }
   ],
   "cars": [
@@ -43,6 +49,12 @@
       "brand": "Ford",
       "model": "Fusion",
       "year": 2017
+    },
+    {
+      "id": "5ce0",
+      "brand": "Ford",
+      "model": "Maverick",
+      "year": 1976
     }
   ]
 }

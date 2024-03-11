@@ -1,0 +1,18 @@
+<h3>Add a new car to the list</h3>
+<form [formGroup]="addCar" class="forms" (ngSubmit)="SaveData()">
+    <div class="form-group">
+        <label for="name">Brand:</label>
+        <input type="text" id="name" name="name" placeholder="Enter tha car's brand" formControlName="brand" required>
+    </div>
+    <div class="form-group">
+        <label for="type">Model:</label>
+        <input type="text" id="type" name="type" placeholder="Enter the car's model" formControlName="model" required>
+    </div>
+    <div class="form-group">
+        <label for="age">Year:</label>
+        <input type="number" id="age" name="age" formControlName="year" required>
+    </div>
+    <button type="submit">Add Car</button>
+</form>
+
+<p>add-car works!</p>

@@ -3,8 +3,8 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Animals } from '../interfaces/Animals';
 import { Cars } from '../interfaces/Cars';
-import { switchMap } from 'rxjs/operators';
-import { catchError } from 'rxjs/operators';
+// import { switchMap } from 'rxjs/operators';
+// import { catchError } from 'rxjs/operators';
 // import { httpOptions } from './httpOptions';
 // import { HandleError, handleHttpError } from './handle-error';
 
@@ -21,8 +21,8 @@ export class ListService {
   removeAnimal(id: number) {
     return this.http.delete(`${this.apiAnimalsUrl}/${id}`);
   }
-  removeCar(cars: Cars[], car: Cars) {
-    return cars.filter((c) => car.brand !== c.brand);
+  removeCar(id: number) {
+    return this.http.delete(`${this.apiCarsUrl}/${id}`);
   }
   getAnimals(): Observable<Animals[]> {
     return this.http.get<Animals[]>(this.apiAnimalsUrl);
@@ -59,4 +59,7 @@ export class ListService {
 //         catchError(this.handleError('addAnimal', animal))
 //       );
 // }
+saveCarData( data: any ){
+  return this.http.post(this.apiCarsUrl, data);
+}
 }
