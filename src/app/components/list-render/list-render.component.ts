@@ -38,7 +38,6 @@ export class ListRenderComponent implements OnInit{
     this.carDetails = `The fabrication year of ${car.model} is ${car.year}`;
   }
   removeAnimal(animal: Animals) {
-    // console.log('Removing animal', animal);
     this.animals=  this.animals.filter((a) => animal.name !== a.name);
     this.listService.removeAnimal(animal.id).subscribe();
 }
