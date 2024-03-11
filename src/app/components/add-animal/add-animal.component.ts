@@ -12,14 +12,14 @@ import { FormsModule, FormGroup, FormControl } from '@angular/forms';
   styleUrl: './add-animal.component.css'
 })
 export class AddAnimalComponent implements OnInit {
-  animal: Animals = {
-    id: 0,
-    name: '',
-    type: '',
-    age: 0,
-  };
+  // animal: Animals = {
+  //   id: 0,
+  //   name: '',
+  //   type: '',
+  //   age: 0,
+  // };
 
-  constructor(private listService: ListService) { }
+  constructor(private animal: ListService) { }
   addAnimal=new FormGroup({
     name: new FormControl(''),
     type: new FormControl(''),
@@ -31,9 +31,10 @@ export class AddAnimalComponent implements OnInit {
 
   SaveData() {
     // console.log(this.addAnimal.value);
-    this.listService.saveAnimalData(this.addAnimal.value).subscribe((result) => {
+    this.animal.saveAnimalData(this.addAnimal.value).subscribe((result) => {
       console.log(result);
     } );
+    this.addAnimal.reset();
   }
 
   // addAnimal(animal: Animals) {

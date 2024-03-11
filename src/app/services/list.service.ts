@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Animals } from '../interfaces/Animals';
 import { Cars } from '../interfaces/Cars';
+import { switchMap } from 'rxjs/operators';
 import { catchError } from 'rxjs/operators';
 // import { httpOptions } from './httpOptions';
 // import { HandleError, handleHttpError } from './handle-error';
@@ -36,6 +37,15 @@ export class ListService {
     return this.http.get<Cars>(`${this.apiCarsUrl}/${id}`);
   }
   saveAnimalData( data: any ){
+        // Consulta o último ID
+        // return this.http.get<any[]>(this.apiAnimalsUrl + '?_sort=id&_order=desc&_limit=1').pipe(
+        //   // Incrementa o ID e adiciona o novo animal
+        //   switchMap((animal) => {
+        //     const lastId = animal.length > 0 ? animal[0].id : 0;
+        //     const newId = lastId + 1;
+        //     const newData = { ...data, id: newId };
+        //     return this.http.post(this.apiAnimalsUrl, newData);
+        //   }));
     
     // console.log(data);
     return this.http.post(this.apiAnimalsUrl, data);
