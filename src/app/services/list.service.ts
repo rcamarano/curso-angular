@@ -8,8 +8,6 @@ import { Cars } from '../interfaces/Cars';
 // import { httpOptions } from './httpOptions';
 // import { HandleError, handleHttpError } from './handle-error';
 
-
-
 @Injectable({
   providedIn: 'root',
 })
@@ -18,12 +16,6 @@ export class ListService {
   private apiCarsUrl = 'http://localhost:3000/cars';
 
   constructor(private http: HttpClient) {}
-  removeAnimal(id: number) {
-    return this.http.delete(`${this.apiAnimalsUrl}/${id}`);
-  }
-  removeCar(id: number) {
-    return this.http.delete(`${this.apiCarsUrl}/${id}`);
-  }
   getAnimals(): Observable<Animals[]> {
     return this.http.get<Animals[]>(this.apiAnimalsUrl);
   }
@@ -36,29 +28,19 @@ export class ListService {
   getCarItem(id: number): Observable<Cars> {
     return this.http.get<Cars>(`${this.apiCarsUrl}/${id}`);
   }
+  removeAnimal(id: number) {
+    return this.http.delete(`${this.apiAnimalsUrl}/${id}`);
+  }
+  removeCar(id: number) {
+    return this.http.delete(`${this.apiCarsUrl}/${id}`);
+  }
+  getLastAnimal(): Observable<any[]> {
+    // Faz uma solicitação HTTP GET para obter todos os animais
+    return this.http.get<any[]>(this.apiAnimalsUrl, { observe: 'body' });
+  }
   saveAnimalData( data: any ){
-        // Consulta o último ID
-        // return this.http.get<any[]>(this.apiAnimalsUrl + '?_sort=id&_order=desc&_limit=1').pipe(
-        //   // Incrementa o ID e adiciona o novo animal
-        //   switchMap((animal) => {
-        //     const lastId = animal.length > 0 ? animal[0].id : 0;
-        //     const newId = lastId + 1;
-        //     const newData = { ...data, id: newId };
-        //     return this.http.post(this.apiAnimalsUrl, newData);
-        //   }));
-    
-    // console.log(data);
     return this.http.post(this.apiAnimalsUrl, data);
   }
-  // addItem(item: Animals) {
-  //   return this.http.post(this.apiAnimalsUrl, item);
-  // }
-//   addAnimal(animal: Animals): Observable<Animals> {
-//     return this.http.post<Animals>(this.apiAnimalsUrl, animal, httpOptions)
-//       .pipe(
-//         catchError(this.handleError('addAnimal', animal))
-//       );
-// }
 saveCarData( data: any ){
   return this.http.post(this.apiCarsUrl, data);
 }

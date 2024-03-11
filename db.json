@@ -1,57 +1,63 @@
 {
   "animals": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Jade",
       "type": "Dog",
       "age": 3
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Mel",
       "type": "Cat",
       "age": 2
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Puggy",
       "type": "Pig",
       "age": 2
     },
     {
-      "id": "4",
+      "id": 4,
       "name": "Gismo",
       "type": "Moguai",
       "age": 647
     },
     {
-      "id": "5",
+      "id": 5,
       "name": "Caco",
       "type": "Frog",
       "age": 68
+    },
+    {
+      "id": 6,
+      "name": "Jack",
+      "type": "Dog",
+      "age": 11
     }
   ],
   "cars": [
     {
-      "id": "1",
+      "id": 1,
       "brand": "Toyota",
       "model": "Corolla",
       "year": 2015
     },
     {
-      "id": "2",
+      "id": 2,
       "brand": "Honda",
       "model": "Civic",
       "year": 2016
     },
     {
-      "id": "3",
+      "id": 3,
       "brand": "Ford",
       "model": "Fusion",
       "year": 2017
     },
     {
-      "id": "4",
+      "id": 4,
       "brand": "Ford",
       "model": "Maverick",
       "year": 1976
