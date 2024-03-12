@@ -29,12 +29,6 @@
       "name": "Caco",
       "type": "Frog",
       "age": 68
-    },
-    {
-      "id": "6",
-      "name": "Jack",
-      "type": "Dog",
-      "age": 11
     }
   ],
   "cars": [

@@ -16,11 +16,19 @@ export class ListService {
   private apiCarsUrl = 'http://localhost:3000/cars';
 
   constructor(private http: HttpClient) {}
-  getAnimals(): Observable<Animals[]> {
-    return this.http.get<Animals[]>(this.apiAnimalsUrl);
+  // getAnimals(): Observable<Animals[]> {
+  //   return this.http.get<Animals[]>(this.apiAnimalsUrl);
+  // }
+  async getAnimals(): Promise<Animals[]> {
+    const data = await fetch(this.apiAnimalsUrl);
+    return await data.json() ?? [];
   }
-  getCars(): Observable<Cars[]> {
-    return this.http.get<Cars[]>(this.apiCarsUrl);
+  // getCars(): Observable<Cars[]> {
+  //   return this.http.get<Cars[]>(this.apiCarsUrl);
+  // }
+  async getCars(): Promise<Cars[]> {
+    const carData = await fetch(this.apiCarsUrl);
+    return await carData.json() ?? [];
   }
   getItem(id: number): Observable<Animals> {
     return this.http.get<Animals>(`${this.apiAnimalsUrl}/${id}`);
