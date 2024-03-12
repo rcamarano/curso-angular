@@ -30,11 +30,19 @@ export class ListService {
     const carData = await fetch(this.apiCarsUrl);
     return await carData.json() ?? [];
   }
-  getItem(id: number): Observable<Animals> {
-    return this.http.get<Animals>(`${this.apiAnimalsUrl}/${id}`);
+  // getItem(id: number): Observable<Animals> {
+  //   return this.http.get<Animals>(`${this.apiAnimalsUrl}/${id}`);
+  // }
+  async getItem(id: number): Promise<Animals> {
+    const itemData = await fetch(`${this.apiAnimalsUrl}/${id}`);
+    return await itemData.json() ?? [];
   }
-  getCarItem(id: number): Observable<Cars> {
-    return this.http.get<Cars>(`${this.apiCarsUrl}/${id}`);
+  // getCarItem(id: number): Observable<Cars> {
+  //   return this.http.get<Cars>(`${this.apiCarsUrl}/${id}`);
+  // }
+  async getCarItem(id: number): Promise<Cars> {
+    const itemCarData = await fetch(`${this.apiCarsUrl}/${id}`);
+    return await itemCarData.json() ?? [];
   }
   removeAnimal(id: number) {
     return this.http.delete(`${this.apiAnimalsUrl}/${id}`);

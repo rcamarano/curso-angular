@@ -19,6 +19,6 @@ export class ItemDetailCarComponent {
 }
 getCar(){
   const id = Number(this.route.snapshot.paramMap.get("id"));
-  this.listService.getCarItem(id).subscribe((car) => this.car = car);
+  this.listService.getCarItem(id).then((car) => this.car = car);
 }
 }
