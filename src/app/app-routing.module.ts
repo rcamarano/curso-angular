@@ -10,6 +10,7 @@ import { EventsComponent } from './components/events/events.component';
 import { ItemDetailCarComponent } from './components/item-detail-car/item-detail-car.component';
 import { AddAnimalComponent } from './components/add-animal/add-animal.component';
 import { AddCarComponent } from './components/add-car/add-car.component';
+import { GetProductsComponent } from './components/get-products/get-products.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
     { path: 'listCar/:id', component: ItemDetailCarComponent},
     { path: 'addAnimal', component: AddAnimalComponent},
     { path: 'addCar', component: AddCarComponent},
+    { path: 'productList', component: GetProductsComponent},
 ];
 
 

@@ -1,0 +1,13 @@
+<div class="section">
+    <h4>Products</h4>
+    <!-- <a class="menu" routerLink="/addAnimal">Add Animal</a> <br>  -->
+    <ul>
+        <li *ngFor="let product of products">
+            Name: <a routerLink="/productList{{ product.id }}">{{product.title}}</a> | Type: {{product.description}}
+            <!-- <button (click)="showAge(product)">Show age</button>
+            <button (click)="removeAnimal(animal)">Delete</button> -->
+
+
+        </li>
+    </ul>
+    <p>{{ productsDetails }}</p>
