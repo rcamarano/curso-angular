@@ -12,7 +12,9 @@ export class ProductListService {
 
   constructor(private http: HttpClient ) {}
   async getProducts(): Promise<Products[]> {
-    const productData = await fetch(this.apiProductsUrl);
-    return await productData.json() ?? [];
-  }
+    const response = await fetch(this.apiProductsUrl);
+    const productData: Products[] = await response.json();
+    console.log(productData);
+    return productData;
+}
 }
