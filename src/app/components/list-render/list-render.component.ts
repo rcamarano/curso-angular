@@ -45,13 +45,13 @@ removeCar(car: Cars) {
   this.cars=  this.cars.filter((a) => car.brand !== a.brand);
   this.listService.removeCar(car.id).subscribe();
 }
-getAnimals(): void {
+async getAnimals(): Promise<void> {
   this.listService.getAnimals().then((animals) => (this.animals = animals));
 } 
 // addAnimal(animal: Animals) {
 //   this.listService.addItem(animal).subscribe((animal) => this.animals.push());
 // }
-getCars(): void {
+async getCars(): Promise<void> {
   this.listService.getCars().then((cars) => (this.cars = cars));
 }
 }

@@ -1,11 +1,14 @@
 <div class="section">
   <h3>Products</h3>
+  <h4>Name:</h4>
+  <p>Description:</p>
   <div *ngIf="products && products.length > 0">
-    <div *ngFor="let product of products">
-      <h4>{{ product.title }}</h4>
-      <p>{{ product.description }}</p>
-      <!-- Aqui você pode adicionar mais detalhes do produto conforme necessário -->
-    </div>
+    <ul>
+      <li *ngFor="let product of products">
+        <h4>Name: {{ product.title }}</h4>
+        <p>Description: {{ product.description }}</p>
+      </li>
+    </ul>
   </div>
 
   <!-- <p>{{ productsDetails }}</p> -->

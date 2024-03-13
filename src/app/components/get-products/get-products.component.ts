@@ -7,34 +7,29 @@ import { ProductListService } from '../../services/product-list.service';
   templateUrl: './get-products.component.html',
   styleUrl: './get-products.component.css',
 })
-// export class GetProductsComponent implements OnInit {
-//   products: Products[] = [];
-//   productsDetails = '';
 
-//   constructor(private productList: ProductListService) {
-//     this.getProducts();
-//     fetch('https://dummyjson.com/products')
-//       .then((res) => res.json())
-//       .then(console.log);
-//   }
-
-//   ngOnInit() {}
-//   async getProducts() {
-//     this.products = await this.productList.getProducts();
-//     console.log(this.products);
-//   }
 export class ProductListComponent implements OnInit {
-  products: any[] = [];
+  products: Products[] = [];
 
-  constructor(private productList: ProductListService) { }
-
-  ngOnInit(): void {
+  constructor(private productList: ProductListService) { 
     this.getProducts();
   }
 
-  getProducts(): void {
-    this.productList.getProducts().then(response => {
+  ngOnInit(): void {
+  }
+
+  // getProducts(): void {
+  //   this.productList.getProducts().then(response => {
+  //     this.products = response;
+  //   });
+  // }
+  async getProducts(): Promise<void> {
+    // this.productList.getProducts().then((products) => (this.products = products));
+    try {
+      const response = await this.productList.getProducts();
       this.products = response;
-    });
+    } catch (error) {
+      console.error('Error fetching products:', error);
+    }
   }
 }
