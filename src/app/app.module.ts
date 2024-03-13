@@ -21,7 +21,6 @@ import { TwoWayBindComponent } from './components/two-way-bind/two-way-bind.comp
 import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 import { ItemDetailCarComponent } from './components/item-detail-car/item-detail-car.component';
 import { AddAnimalComponent } from './components/add-animal/add-animal.component';
-import { ListService } from './services/list.service';
 import { AddCarComponent } from './components/add-car/add-car.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { ProductListComponent } from './components/get-products/get-products.component';

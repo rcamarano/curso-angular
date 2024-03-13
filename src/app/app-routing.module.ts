@@ -1,3 +1,4 @@
+import { AddProductComponent } from './components/add-product/add-product.component';
 import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -23,6 +24,7 @@ const routes: Routes = [
     { path: 'listCar/:id', component: ItemDetailCarComponent},
     { path: 'addAnimal', component: AddAnimalComponent},
     { path: 'addCar', component: AddCarComponent},
+    { path: 'addProduct', component: AddProductComponent},
     { path: 'productList', component: ProductListComponent},
 ];
 

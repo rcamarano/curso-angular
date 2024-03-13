@@ -12,6 +12,4 @@ export class AddProductComponent implements OnInit {
   ngOnInit() {
   }
 
-} {
-
 }
