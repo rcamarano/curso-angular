@@ -1,3 +1,4 @@
+<!-- <div class="container" >
 <div class="section">
   <h3>Products</h3>
   <h4>Name:</h4>
@@ -7,9 +8,25 @@
       <li *ngFor="let product of products">
         <h4>Name: {{ product.title }}</h4>
         <p>Description: {{ product.description }}</p>
+        <p>Price: {{ product.price }} </p>
       </li>
     </ul>
   </div>
-
-  <!-- <p>{{ productsDetails }}</p> -->
 </div>
+</div> -->
+
+<div *ngIf="products.length > 0; else loading">
+  <h3>Products list</h3>
+  <ul>
+    <li *ngFor="let product of products">
+      <h4>Name: {{ product.title }}</h4>
+      <p>Description: {{ product.description }}</p>
+      <p>Price: {{ product.price }}</p>
+      <!-- Adicione outros campos do produto conforme necessário -->
+    </li>
+  </ul>
+</div>
+
+<ng-template #loading>
+  <p>Loading products list...</p>
+</ng-template>

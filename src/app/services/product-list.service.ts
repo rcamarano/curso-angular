@@ -13,8 +13,9 @@ export class ProductListService {
   constructor(private http: HttpClient ) {}
   async getProducts(): Promise<Products[]> {
     const response = await fetch(this.apiProductsUrl);
-    const productData: Products[] = await response.json();
-    console.log(productData);
-    return productData;
-}
+    const data = await response.json();
+    const products: Products[] = data.products;
+    console.log(products);
+    return products;
+  }
 }

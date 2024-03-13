@@ -24,7 +24,6 @@ export class ProductListComponent implements OnInit {
   //   });
   // }
   async getProducts(): Promise<void> {
-    // this.productList.getProducts().then((products) => (this.products = products));
     try {
       const response = await this.productList.getProducts();
       this.products = response;
