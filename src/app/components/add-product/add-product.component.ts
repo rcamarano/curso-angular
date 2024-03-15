@@ -8,25 +8,34 @@ import { ProductListService } from '../../services/product-list.service';
   styleUrl: './add-product.component.css'
 })
 export class AddProductComponent implements OnInit {
-  productForm!: FormGroup;
+  productForm=new FormGroup({
+    title: new FormControl(''),
+    description: new FormControl(''),
+    price: new FormControl(0),
+    discountPercentage: new FormControl(0),
+    rating: new FormControl(0),
+    stock: new FormControl(0),
+    category: new FormControl(''),
+    brand: new FormControl(''),
+});
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private product: ProductListService) { }
 
   ngOnInit(): void {
-    this.productForm = this.formBuilder.group({
-      title: '',
-      description: '',
-      price: 0,
-      discountPercentage: 0,
-      rating: 0,
-      stock: 0,
-      brand: '',
-      category: '',
-    });
+    // this.productForm = this.formBuilder.group({
+    //   title: '',
+    //   description: '',
+    //   price: 0,
+    //   discountPercentage: 0,
+    //   rating: 0,
+    //   stock: 0,
+    //   brand: '',
+    //   category: '',
+    // });
   }
 
   async addProduct(): Promise<void> {
-    const product = this.productForm.value;
+    // const product = this.productForm.value;
     // ... add product to the database
     fetch('https://dummyjson.com/products/add', {
       method: 'POST',
