@@ -16,7 +16,7 @@ export class ProductListComponent implements OnInit {
     this.getProducts();
   }
   getProductById=new FormGroup({
-    id: new FormControl(0),
+    id: new FormControl(),
   });
 
   ngOnInit(): void {
@@ -38,7 +38,7 @@ export class ProductListComponent implements OnInit {
   async getById(id: number): Promise<void> {
     try {
       const response = await this.productList.getById(id);
-      // Handle the response here
+      console.log(response);
     } catch (error) {
       console.error('Error fetching product by ID:', error);
     }
