@@ -21,12 +21,6 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  // getProducts(): void {
-  //   this.productList.getProducts().then(response => {
-  //     this.products = response;
-  //   });
-  // }
   async getProducts(): Promise<void> {
     try {
       const response = await this.productList.getProducts();
@@ -35,12 +29,25 @@ export class ProductListComponent implements OnInit {
       console.error('Error fetching products:', error);
     }
   }
-  async getById(id: number): Promise<void> {
-    try {
-      const response = await this.productList.getById(id);
-      console.log(response);
-    } catch (error) {
-      console.error('Error fetching product by ID:', error);
+  // async getById(id: number): Promise<void> {
+  //   try {
+  //     const response = await this.productList.getById(id);
+  //     console.log(response);
+  //   } catch (error) {
+  //     console.error('Error fetching product by ID:', error);
+  //   }
+  // }
+  async getById(): Promise<void> {
+    const id = this.getProductById.value.id; // Obtém o ID do input
+    if (id !== null && id !== undefined && id !== '') {
+      try {
+        const response = await this.productList.getById(id);
+        this.products = [response]; // Atualiza a lista para mostrar apenas o produto correspondente ao ID
+      } catch (error) {
+        console.error('Error fetching product by ID:', error);
+      }
+    } else {
+      this.getProducts(); // Se nenhum ID for passado, carrega todos os produtos novamente
     }
   }
 }
