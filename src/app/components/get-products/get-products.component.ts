@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Products } from '../../interfaces/Products';
 import { ProductListService } from '../../services/product-list.service';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-get-products',
@@ -14,6 +15,9 @@ export class ProductListComponent implements OnInit {
   constructor(private productList: ProductListService) { 
     this.getProducts();
   }
+  getProductById=new FormGroup({
+    id: new FormControl(0),
+  });
 
   ngOnInit(): void {
   }
@@ -29,6 +33,14 @@ export class ProductListComponent implements OnInit {
       this.products = response;
     } catch (error) {
       console.error('Error fetching products:', error);
+    }
+  }
+  async getById(id: number): Promise<void> {
+    try {
+      const response = await this.productList.getById(id);
+      // Handle the response here
+    } catch (error) {
+      console.error('Error fetching product by ID:', error);
     }
   }
 }

@@ -17,7 +17,15 @@
 
 <div *ngIf="products.length > 0; else loading">
   <h3>Products list</h3>
-  <ul>
+  <form [formGroup]="getProductById" class="forms" (ngSubmit)="getProductById.value.id !== null && getProductById.value.id !== undefined ? getById(getProductById.value.id) : null">   
+     <div class="form-group">
+        <label for="id">Gets product by ID</label>
+        <input type="text" placeholder="Enter the product's ID" formControlName="id" required>
+    </div>
+    <button type="submit">Get product By ID</button>
+
+</form>
+    <ul>
     <li *ngFor="let product of products">
       <h4>Name: {{ product.title }}</h4>
       <p>Description: {{ product.description }}</p>

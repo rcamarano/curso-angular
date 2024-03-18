@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, lastValueFrom } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Products } from '../interfaces/Products';
@@ -25,6 +25,17 @@ export class ProductListService {
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
+  }
+  async getById(id: number): Promise<Products> {
+    const url = `${this.apiProductsUrl}/${id}`;
+    try {
+      const productObservable = this.http.get<Products>(url);
+      const product = await lastValueFrom(productObservable);
+      return product;
+    } catch (error) {
+      console.error('getById', error);
+      throw error;
+    }
   }
   // async addProduct(newProduct: Products): Promise<any> {
   //   return this.http.post<any>(this.apiProductsUrl, newProduct)
