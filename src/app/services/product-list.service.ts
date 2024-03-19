@@ -49,13 +49,16 @@ export class ProductListService {
       throw error;
     }
   }
-  // async addProduct(newProduct: Products): Promise<any> {
-  //   return this.http.post<any>(this.apiProductsUrl, newProduct)
-  //     .pipe(
-  //       catchError(error => {
-  //         throw new Error('Erro ao adicionar novo produto: ' + error.message);
-  //       })
-  //     );
+  // async getByCat(category: string): Promise<Products[]> {
+  //   const url = `${this.apiProductsByCatUrl}${category}`;
+  //   try {
+  //     const productObservable = this.http.get<Products[]>(url);
+  //     const products = await lastValueFrom(productObservable);
+  //     return products;
+  //   } catch (error) {
+  //     console.error('getByCat', error);
+  //     throw error;
+  //   }
   // }
   addProduct(product: Products): Observable<Products> {
     const httpOptions = {

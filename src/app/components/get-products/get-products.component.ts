@@ -32,14 +32,6 @@ export class ProductListComponent implements OnInit {
       console.error('Error fetching products:', error);
     }
   }
-  // async getById(id: number): Promise<void> {
-  //   try {
-  //     const response = await this.productList.getById(id);
-  //     console.log(response);
-  //   } catch (error) {
-  //     console.error('Error fetching product by ID:', error);
-  //   }
-  // }
   async getById(): Promise<void> {
     const id = this.getProductById.value.id; // Obtém o ID do input
     if (id !== null && id !== undefined && id !== '') {
@@ -69,4 +61,5 @@ export class ProductListComponent implements OnInit {
     }
     this.getProductByCategory.reset();
   }
+
 }
