@@ -10,6 +10,7 @@ import { Products } from '../interfaces/Products';
 })
 export class ProductListService {
   private apiProductsUrl = 'https://dummyjson.com/products/';
+  private apiProductsByCatUrl = 'https://dummyjson.com/products/category/';
 
   constructor(private http: HttpClient ) {}
   async getProducts(): Promise<Products[]> {
@@ -34,6 +35,17 @@ export class ProductListService {
       return product;
     } catch (error) {
       console.error('getById', error);
+      throw error;
+    }
+  }
+  async getByCat(category: string): Promise<Products> {
+    const url = `${this.apiProductsByCatUrl}${category}`;
+    try {
+      const productObservable = this.http.get<Products>(url);
+      const product = await lastValueFrom(productObservable);
+      return product;
+    } catch (error) {
+      console.error('getByCat', error);
       throw error;
     }
   }

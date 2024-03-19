@@ -18,6 +18,9 @@ export class ProductListComponent implements OnInit {
   getProductById=new FormGroup({
     id: new FormControl(),
   });
+  getProductByCategory=new FormGroup({
+    category: new FormControl(''),
+  });
 
   ngOnInit(): void {
   }
@@ -49,5 +52,21 @@ export class ProductListComponent implements OnInit {
     } else {
       this.getProducts(); // Se nenhum ID for passado, carrega todos os produtos novamente
     }
+    this.getProductById.reset();
+  }
+
+  async getByCat(): Promise<void> {
+    const category = this.getProductByCategory.value.category;
+    if (category !== null && category !== undefined && category !== '') {
+      try {
+        const response = await this.productList.getByCat(category);
+        this.products = [response];
+      } catch (error) {
+        console.error('Error fetching product by Category:', error);
+      }
+    } else {
+      this.getProducts();
+    }
+    this.getProductByCategory.reset();
   }
 }

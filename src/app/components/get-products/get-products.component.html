@@ -1,21 +1,21 @@
 <div *ngIf="products.length > 0; else loading">
   <h3>Products list</h3>
-  <!-- <form [formGroup]="getProductById" class="forms" (ngSubmit)="getProductById.value.id !== null && getProductById.value.id !== undefined ? getById(getProductById.value.id) : null">   
-     <div class="form-group">
-        <label for="id">Gets product by ID</label>
-        <input type="text" placeholder="Enter the product's ID" formControlName="id" required>
-    </div>
-    <button class="form-btn" type="submit">Get product By ID</button>
-    <br>
-    <hr>
 
-</form> -->
 <form [formGroup]="getProductById" class="forms" (ngSubmit)="getById()"> <!-- Alterado para chamar getById() sem argumento -->
   <div class="form-group">
     <label for="id">Get product by ID</label>
     <input type="text" placeholder="Enter the product's ID" formControlName="id" required>
   </div>
   <button class="form-btn" type="submit">Get product By ID</button>
+  <br>
+  <hr>
+</form>
+<form [formGroup]="getProductByCategory" class="forms" (ngSubmit)="getByCat()">
+  <div class="form-group">
+    <label for="category">Get product by Category</label>
+    <input type="text" placeholder="Enter the Category" formControlName="category" required>
+  </div>
+  <button class="form-btn" type="submit">Get product By Category</button>
   <br>
   <hr>
 </form>
