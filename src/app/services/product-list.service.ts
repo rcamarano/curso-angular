@@ -28,9 +28,9 @@ export class ProductListService {
     };
   }
   async getById(id: number): Promise<Products> {
-    const url = `${this.apiProductsUrl}/${id}`;
+    const idUrl = `${this.apiProductsUrl}/${id}`;
     try {
-      const productObservable = this.http.get<Products>(url);
+      const productObservable = this.http.get<Products>(idUrl);
       const product = await lastValueFrom(productObservable);
       return product;
     } catch (error) {
@@ -38,28 +38,28 @@ export class ProductListService {
       throw error;
     }
   }
-  async getByCat(category: string): Promise<Products> {
-    const url = `${this.apiProductsByCatUrl}${category}`;
-    try {
-      const productObservable = this.http.get<Products>(url);
-      const product = await lastValueFrom(productObservable);
-      return product;
-    } catch (error) {
-      console.error('getByCat', error);
-      throw error;
-    }
-  }
-  // async getByCat(category: string): Promise<Products[]> {
-  //   const url = `${this.apiProductsByCatUrl}${category}`;
+  // async getByCat(category: string): Promise<Products> {
+  //   const categoryUrl = `${this.apiProductsByCatUrl}${category}`;
   //   try {
-  //     const productObservable = this.http.get<Products[]>(url);
-  //     const products = await lastValueFrom(productObservable);
-  //     return products;
+  //     const productObservable = this.http.get<Products>(categoryUrl);
+  //     const product = await lastValueFrom(productObservable);
+  //     return product;
   //   } catch (error) {
   //     console.error('getByCat', error);
   //     throw error;
   //   }
   // }
+  async getByCat(category: string): Promise<{ products: Products[] }> {
+    const categoryUrl = `${this.apiProductsByCatUrl}${category}`;
+    try {
+      const productObservable = this.http.get<{ products: Products[] }>(categoryUrl);
+      const response = await lastValueFrom(productObservable);
+      return response;
+    } catch (error) {
+      console.error('getByCat', error);
+      throw error;
+    }
+  }
   addProduct(product: Products): Observable<Products> {
     const httpOptions = {
       headers: new HttpHeaders({
