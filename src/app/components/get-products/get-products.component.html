@@ -19,6 +19,16 @@
   <br>
   <hr>
 </form>
+<!-- <form [formGroup]="getProductByBrand" class="forms" (ngSubmit)="getByBrand()">
+  <div class="form-group">
+    <label for="brand">Get product by Brand</label>
+    <input type="text" placeholder="Enter the Brand" formControlName="brand" required>
+  </div>
+  <button class="form-btn" type="submit">Get product By Brand</button>
+  <br>
+  <hr>
+    // dummyjson api não tem endpoint para fazer um get por marca
+</form> -->
 <ul>
     <li *ngFor="let product of products">
       <h4>Name: {{ product.title }}</h4>

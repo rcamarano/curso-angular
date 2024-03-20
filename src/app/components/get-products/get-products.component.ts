@@ -21,6 +21,9 @@ export class ProductListComponent implements OnInit {
   getProductByCategory=new FormGroup({
     category: new FormControl(''),
   });
+  getProductByBrand=new FormGroup({
+    brand: new FormControl(''),
+  });
 
   ngOnInit(): void {
     this.getProducts(); // Carrega todos os produtos ao inicializar o componente
@@ -48,21 +51,6 @@ export class ProductListComponent implements OnInit {
     this.getProductById.reset();
   }
 
-  // async getByCat(): Promise<void> {
-  //   const category = this.getProductByCategory.value.category;
-  //   if (category !== null && category !== undefined && category !== '') {
-  //     try {
-  //       const response = await this.productList.getByCat(category);
-  //       // this.products = [response];
-  //       console.log(response);
-  //     } catch (error) {
-  //       console.error('Error fetching product by Category:', error);
-  //     }
-  //   } else {
-  //     this.getProducts();
-  //   }
-  //   this.getProductByCategory.reset();
-  // }
   async getByCat(): Promise<void> {
     const category = this.getProductByCategory.value.category;
     if (category !== null && category !== undefined && category !== '') {
@@ -82,5 +70,25 @@ export class ProductListComponent implements OnInit {
     }
     this.getProductByCategory.reset();
   }
+  // async getByBrand(): Promise<void> {
+  //   const brand = this.getProductByBrand.value.brand;
+  //   if (brand !== null && brand !== undefined && brand !== '') {
+  //     try {
+  //       const response = await this.productList.getByBrand(brand);
+  //       // Verifica se a resposta contém um array de produtos
+  //       if (Array.isArray(response.products)) {
+  //         this.products = response.products; // Atualiza a lista de produtos
+  //       } else {
+  //         console.error('Response does not contain an array of products:', response);
+  //       }
+  //     } catch (error) {
+  //       console.error('Error fetching product by Brand:', error);
+  //     }
+  //   } else {
+  //     this.getProducts(); // Carrega todos os produtos novamente se nenhuma categoria for especificada
+  //   }
+  //   this.getProductByBrand.reset();
+  // }
+    // dummyjson api não tem endpoint para fazer um get por marca
 
 }

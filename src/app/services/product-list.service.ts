@@ -38,17 +38,7 @@ export class ProductListService {
       throw error;
     }
   }
-  // async getByCat(category: string): Promise<Products> {
-  //   const categoryUrl = `${this.apiProductsByCatUrl}${category}`;
-  //   try {
-  //     const productObservable = this.http.get<Products>(categoryUrl);
-  //     const product = await lastValueFrom(productObservable);
-  //     return product;
-  //   } catch (error) {
-  //     console.error('getByCat', error);
-  //     throw error;
-  //   }
-  // }
+
   async getByCat(category: string): Promise<{ products: Products[] }> {
     const categoryUrl = `${this.apiProductsByCatUrl}${category}`;
     try {
@@ -60,6 +50,18 @@ export class ProductListService {
       throw error;
     }
   }
+  // async getByBrand(brand: string): Promise<{ products: Products[] }> {
+  //   const brandUrl = `${this.apiProductsUrl}brand/${brand}`;
+  //   try {
+  //     const productObservable = this.http.get<{ products: Products[] }>(brandUrl);
+  //     const response = await lastValueFrom(productObservable);
+  //     return response;
+  //   } catch (error) {
+  //     console.error('getByBrand', error);
+  //     throw error;
+  //   }
+  // }
+  // dummyjson api não tem endpoint para fazer um get por marca
   addProduct(product: Products): Observable<Products> {
     const httpOptions = {
       headers: new HttpHeaders({
