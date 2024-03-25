@@ -1,31 +1,9 @@
-<header>Header</header>
-<h3>Hello Angular World!</h3>
-<p>Tutorial Angular Course</p>
-<div style="display: flex">
-    <div style="width: 200px;">
-    <ul>
-        <a class="menu" routerLink="/">Home</a> <br> 
-        <a class="menu" routerLink="/magic">Magic</a> <br> 
-        <a class="menu" routerLink="random/">Random</a> <br> 
-        <a class="menu" routerLink="/counter">Counter</a> <br> 
-        <a class="menu" routerLink="/list">List</a> <br>
-        <a class="menu" routerLink="/productList">Products List</a> <br>
-        <a class="menu" routerLink="/addProduct">Add a product</a> <br>
-    </ul>
-    </div>
-    <div class="content" style="flex: 1;">
-        <router-outlet></router-outlet>
-    </div>
-</div>
-<footer>Footer</footer>
+<div class="po-wrapper">
+  <po-toolbar p-title="AppName"></po-toolbar>
 
-<!-- <app-first-component></app-first-component>
-<app-parent-data [name]="userName" [userData]="userData"></app-parent-data>
-<app-deirectives></app-deirectives>
-<app-if-render></app-if-render>
-<app-events></app-events>
-<app-emitter></app-emitter>
-<app-counter></app-counter>
-<app-list-render></app-list-render>
-<app-pipes></app-pipes>
-<app-two-way-bind></app-two-way-bind> -->
+  <po-menu [p-menus]="menus"></po-menu>
+
+  <po-page-default p-title="AppName">
+    <p> AppName page </p>
+  </po-page-default>
+</div>

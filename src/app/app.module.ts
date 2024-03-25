@@ -24,6 +24,8 @@ import { AddAnimalComponent } from './components/add-animal/add-animal.component
 import { AddCarComponent } from './components/add-car/add-car.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { ProductListComponent } from './components/get-products/get-products.component';
+import { PoModule } from '@po-ui/ng-components';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,8 @@ import { ProductListComponent } from './components/get-products/get-products.com
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    PoModule,
+    RouterModule.forRoot([]),
   ],
   providers: [
     provideClientHydration(),
